@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Instagram Downloader Icon",
+    "version": "1.0",
+    "description": "Baixe a foto de perfil de qualquer conta do Instagram com apenas um clique!",
+    "icons": {
+        "19": "./assets/icons/icon19.png",
+        "32": "./assets/icons/icon38.png",
+        "48": "./assets/icons/icon48.png",
+        "128": "./assets/icons/icon128.png"
+    },
+    "action": {
+        "default_icon": {
+        "16": "./assets/icons/icon19.png",
+        "32": "./assets/icons/icon38.png",
+        "48": "./assets/icons/icon48.png"
+        },
+        "default_title": "Instagram Downloader",
+        "default_popup": "src/pages/index.html"
+    },
+    "content_scripts": [
+        {
+        "js": ["src/components/buttondownloader.js", "src/main.js"],
+        "matches": ["https://www.instagram.com/*"]
+        }
+    ],
+    "permissions": ["scripting", "activeTab", "storage"],
+    "host_permissions": ["https://www.instagram.com/*"]
+}
